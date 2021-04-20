@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       docker: 18
       nodejs: 10
-  pre_builds:
+  pre_build:
     commands:
       - echo Installing dependencies
       - npm install
@@ -16,7 +16,7 @@ phases:
       - npm run start
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazon.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-  post_builds:
+  post_build:
     commands:
       - echo Pushing the docker image
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazon.com/$IMAGE_REPO_NAME:$IMAGE_TAG
