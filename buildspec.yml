@@ -8,12 +8,12 @@ phases:
   pre_build:
     commands:
       - echo Installing dependencies
+      - npm install -g pm2
       - npm install
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
     commands:
       - echo Building
-      - npm run start
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazon.com/$IMAGE_REPO_NAME:$IMAGE_TAG
   post_build:
