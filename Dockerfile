@@ -1,8 +1,8 @@
 FROM 815846117506.dkr.ecr.us-east-1.amazonaws.com/node-alpine:latest
 
-RUN sudo su
+RUN pwd
 
-RUN mkdir -p app
+RUN mkdir app
 
 WORKDIR /app
 
