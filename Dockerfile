@@ -1,4 +1,4 @@
-FROM node:13.8.0-alpine
+FROM 815846117506.dkr.ecr.us-east-1.amazonaws.com/node-alpine:latest
 
 RUN mkdir -p /app/src
 
