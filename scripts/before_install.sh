@@ -1,8 +1,9 @@
     #!/bin/bash
 
     #download node and npm (nvm - node version manager)
-    curl -o https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash 
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash 
     . ~/.nvm/nvm.sh
+    
     nvm install node
 
     #create our directory if it doesn't exist
