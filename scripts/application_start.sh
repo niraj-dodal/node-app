@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#give permission for everything in the express-app directory
+sudo chmod -R 777 /home/ec2-user/express-app
+
 #navigate to the working directory where we have our code
 cd /home/ec2-user/express-app
 
